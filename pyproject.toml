@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medai-modelzoo"
+version = "0.1.0"
+description = "Medical image segmentation model zoo and test APIs"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "MedAI-ModelZoo Contributors" }
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["my_lib*"]
