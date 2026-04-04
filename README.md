@@ -13,6 +13,8 @@
 - 2D中等测试使用 **Kvasir-SEG**，图像统一 `resize` 到 `352`。
 - 3D简单测试使用 **MSD Task04 Hippocampus**，体数据统一 `resize` 到 `96`。
 - 3D中等测试使用 **MSD Task09 Spleen**，体数据统一 `resize` 到 `96`。
+- 训练配置采用通用策略：`optimizer=AdamW`、`loss=BCE + Dice`，并按任务类型分别设置 `batch_size` 与 `image_size`。
+- 当前默认批次划分为：`twoD_simple_batch_size=4`、`twoD_medium_batch_size=4`、`threeD_simple_batch_size=1`、`threeD_medium_batch_size=1`（详见 `my_lib/test/train_config.py`）。
 
 ## 🚀 快速开始
 
